@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with source_store_sales as (
     select * from {{ source("snowflake_source_sample_data", "STORE_SALES") }}
 ),
