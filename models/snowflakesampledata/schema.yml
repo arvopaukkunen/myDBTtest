@@ -1,0 +1,12 @@
+version: 2 # simply, needs the be there. Why I do not know...
+# tutorial from https://docs.getdbt.com/docs/build/sources
+
+sources: # tel the dbt that this is sources, not for example models
+  - name: snowflake_source_sample_data # a name
+    description: 'A sample database provided by snowflake'
+    database: snowflake_sample_data  
+    schema: TPCDS_SF10TCL  
+    tables:
+    - name: STORE_SALES
+      description: "Details about sales in the store"
+

@@ -1,0 +1,101 @@
+# example profiles.yml file
+#dbt-demo:
+# target: dev
+#  outputs:
+#    dev:
+#      type: sqlserver
+#      driver: 'ODBC Driver 18 for SQL Server' # (The ODBC Driver installed on your system)
+#      server: arvo-aalto.database.windows.net
+#      port: 1433
+#      database: mesh
+#      schema: dbt-stg
+#      #user: localadmin
+#      #password: FiskarsRul3z
+#      authentication: CLI
+#      trust_cert: True
+
+snowflake:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: yp72336.west-europe.azure
+
+      # User/password auth
+      user: Arvo
+      password: VirtasalmiRul3z%
+
+      role: ACCOUNTADMIN
+      database: SMARTHOME
+      warehouse: COMPUTE_WH
+      schema: STG
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: ArvoTag
+
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false
+      retry_all: False  # default: false
+      reuse_connections: True # default: True if client_session_keep_alive is False, otherwise None
+
+    uat:
+      type: snowflake
+      account: yp72336.west-europe.azure
+
+      # User/password auth
+      user: Arvo
+      password: VirtasalmiRul3z%
+
+      role: ACCOUNTADMIN
+      database: SMARTHOME
+      warehouse: COMPUTE_WH
+      schema: UAT
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: ArvoTag
+
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false
+      retry_all: False  # default: false
+      reuse_connections: True # default: True if client_session_keep_alive is False, otherwise None
+
+    prod:
+      type: snowflake
+      account: yp72336.west-europe.azure
+
+      # User/password auth
+      user: Arvo
+      password: VirtasalmiRul3z%
+
+      role: ACCOUNTADMIN
+      database: SMARTHOME
+      warehouse: COMPUTE_WH
+      schema: PROD
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: ArvoTag
+
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false
+      retry_all: False  # default: false
+      reuse_connections: True # default: True if client_session_keep_alive is False, otherwise None
+
+
+sqlserver:
+  target: dev
+  outputs:
+    dev:
+      type: sqlserver
+      driver: 'ODBC Driver 18 for SQL Server' # (The ODBC Driver installed on your system)
+      server: arvo-aalto.database.windows.net
+      port: 1433
+      database: northwind
+      schema: dbo
+      user: localadmin
+      password: FiskarsRul3z
